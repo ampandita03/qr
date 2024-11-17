@@ -8,9 +8,7 @@ const App = () => {
 
   const generateQr = async () => {
     try {
-      let response = await fetch(
-        `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link)}`
-      );
+      let response = await fetch(API_TO_GENERATE_QR);
       if (!response.ok) {
         Alert.alert('Something went wrong!');
         return;
